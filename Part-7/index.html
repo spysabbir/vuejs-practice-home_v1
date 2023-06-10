@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js | Part 5</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>Enter your name</h3>
+        <!-- <input type="text" @keyup="getKeyData"> -->
+        <input type="text" @keyup.enter="getKeyData">
+        <span>Welcome {{name}}!</span>
+
+        <hr>
+
+        <form @submit.prevent="formSubmit">
+            <h3>Enter your name</h3>
+            <input type="text" @keyup="getKeyData">
+            <span>Welcome {{name}}!</span>
+            <button type="submit">Ok</button>
+        </form>
+
+        <hr>
+
+        <div class="card" @click="cardClick">
+        <!-- <div class="card" @click.right="cardClick"> -->
+            <!-- <button @click="btnClick">Btn</button> -->
+            <button @click.stop="btnClick">Btn</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
