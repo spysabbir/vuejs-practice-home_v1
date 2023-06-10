@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js | Part 5</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+       <h3>Enter a number</h3>
+       <!-- <input type="text" @input="inputData" :value="number"> -->
+       <input type="text" v-model.number="number">
+       <br>
+       <button @click="getDubble">Get Dubble</button>
+       <button @click="getSquare">Get Square</button>
+       <button @click="addTen">Add 10</button>
+       <button @click="reset">Reset</button>
+       <hr>
+       <label>Enter Number: {{number}}</label>
+       <br>
+       <label>Result: {{result}}</label>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
