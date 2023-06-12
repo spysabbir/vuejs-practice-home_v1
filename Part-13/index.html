@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js | Part 13</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>About Me</h3>
+        <table>
+            <tbody>
+                <tr v-for="(value, key, index) in aboutMe">
+                    <td>{{index+1}}</td>
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Skill</h3>
+        <template v-for="skill in skills" :key="skill.name">
+            {{skill.name}},
+        </template>
+
+
+        <div>
+            <p v-for="i in 9">{{i}}</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
