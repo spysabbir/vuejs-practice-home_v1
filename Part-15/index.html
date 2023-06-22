@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js | Part 15</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <input type="text" placeholder="Enter your review" v-model="review">
+
+        <li v-for="(skill, index) in skills" @click="removeSkill(index)" :key="skill.name">
+            <p>
+                {{index+1}} {{skill.name}} ({{skill.experience}})
+            </p>
+        </li>
+
+        <!-- <h3>Total: {{ countSkill() }}</h3> -->
+        <h3>Total: {{ totalSkill }}</h3>
+
+        <h3>Top Skills</h3>
+
+        <li v-for="(skill, index) in topskills" @click="removeSkill(index)" :key="skill.name">
+            <p>
+                {{index+1}} {{skill.name}} ({{skill.experience}})
+            </p>
+        </li>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
