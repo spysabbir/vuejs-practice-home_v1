@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js | Part 14</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle">Show / Hide</button>
+       <div class="card" v-show="show">
+            Hello
+       </div>
+
+       <li v-for="(skill, index) in skills" :key="skill.name">
+        <p>
+            {{index+1}} {{skill.name}} - 
+            <span v-if="skill.experience > 4">Pro</span>
+            <span v-else-if="skill.experience > 3">Medium</span>
+            <span v-else-if="skill.experience > 2">Beginner</span>
+            <span v-else>Expart</span>
+        </p>
+     </li>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
