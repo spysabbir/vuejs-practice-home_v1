@@ -32,7 +32,8 @@
                         </label>
                       </div>
                       <div>
-                        <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white">Login</button>
+                        <span class="btn btn-primary me-2 mb-2 mb-md-0 text-white" v-if="loginStatus">Login ....</span>
+                        <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white" v-else>Login</button>
                       </div>
                       <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>
                     </form>
@@ -48,12 +49,15 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data: () => ({
     formData: {
       email: "",
       password: "",
-    }
+    },
+    loginStatus: false,
   }),
   methods: {
     handleLogin() {
@@ -72,6 +76,21 @@ export default {
         this.$refs.password.focus();
         return;
       }
+
+      this.loginStatus = true;
+      axios.post("Your Url", this.formData)
+      .then((res) => {
+        alert(res.data.message);
+      }).catch(err => {
+        let errorMessage = "Something went wrong.";
+        if(err.response){
+          errorMessage = err.response.data.message;
+        }
+
+        alert(errorMessage);
+      }).finally(() => {
+        this.loginStatus = false;
+      });
     }
   },
 }
