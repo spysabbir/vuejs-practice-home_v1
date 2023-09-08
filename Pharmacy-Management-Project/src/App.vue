@@ -1,13 +1,11 @@
 <template>
-  <login></login>
+  <router-view></router-view>
 </template>
 
 <script>
-import Login from './components/auth/Login.vue';
 
 export default {
   components: {
-    Login,
   },
 }
 </script>

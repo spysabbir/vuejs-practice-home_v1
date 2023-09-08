@@ -81,6 +81,8 @@ export default {
       axios.post("Your Url", this.formData)
       .then((res) => {
         alert(res.data.message);
+        localStorage.setItem("accessToken", res.data.accessToken);
+        this.$router.push("/dashboard")
       }).catch(err => {
         let errorMessage = "Something went wrong.";
         if(err.response){
